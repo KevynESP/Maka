@@ -14,6 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
 using System.Net.Sockets;
+using MySql.Data.MySqlClient;
+using System.Collections.ObjectModel;
+using Maka2.Model;
+using Maka2.Views;
 
 namespace Maka2
 {
@@ -23,40 +27,19 @@ namespace Maka2
     public partial class MainWindow : Window
     {
         Socket socket;
-        EndPoint epLocal, epRemote;
+        EndPoint  epRemote;
         byte[] buffer;
+        
+       
 
         public MainWindow()
         {
             InitializeComponent();
+
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-
             socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-
-            TMensaje.Text = "Write down...";
-            IPLocal.Content = Maka2.App.UsuarioLogeado;
+            
             //IPLocal.Content = GetLocalIp();
-            PortLocal.Content = IPPublica();
-        }
-
-        private string GetLocalIp()
-        {
-            IPHostEntry host;
-            host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
-            }
-            return "127.0.0.1";
-        }
-
-        private string IPPublica()
-        {
-            string externalip = new WebClient().DownloadString("http://icanhazip.com");
-            return externalip;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -89,26 +72,6 @@ namespace Maka2
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
 
-        private void ConnectBtn_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                //bind socket
-                epLocal = new IPEndPoint(IPAddress.Parse(LocalIP.Text.Trim()), Convert.ToInt32(LocalPort.Text.Trim()));
-                socket.Bind(epLocal);
-                //Connect to remote
-                epRemote = new IPEndPoint(IPAddress.Parse(RemoteIp.Text.Trim()), Convert.ToInt32(RemotePort.Text.Trim()));
-                socket.Connect(epRemote);
-                //List the port
-                buffer = new byte[1500];
-                socket.BeginReceiveFrom(buffer, 0, buffer.Length, SocketFlags.None, ref epRemote, new AsyncCallback(MessageCallBack), buffer);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void MessageCallBack(IAsyncResult aResult)
         {
             try
@@ -134,22 +97,14 @@ namespace Maka2
 
         private void TMensaje_GotFocus(object sender, RoutedEventArgs e)
         {
-            TMensaje.Text = "";
+
         }
 
         private void EnviarBtn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                //Convert string byte
-                ASCIIEncoding aEncoding = new ASCIIEncoding();
-                byte[] sendingMessage = new byte[1500];
-                sendingMessage = aEncoding.GetBytes(TMensaje.Text);
-                //Send 
-                socket.Send(sendingMessage);
-                //add message
-                lMensajes.Items.Add(DateTime.Now.ToShortTimeString() + " Me: " + TMensaje.Text);
-                TMensaje.Text = "";
+
             }
             catch (Exception ex)
             {
@@ -158,5 +113,10 @@ namespace Maka2
             
         }
 
+        private void AñadirUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            NuevoUser nu = new NuevoUser();
+            nu.ShowDialog();
+        }
     }
 }

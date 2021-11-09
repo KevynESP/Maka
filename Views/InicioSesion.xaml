@@ -68,8 +68,12 @@
         </Grid>
 
         <Border Grid.Row="2" Background="#252525">
-            <Button x:Name="BtnConectar" Style="{StaticResource ConnectBtn}"
-                    Margin="0,8,0,8" HorizontalAlignment="Center" Click="BtnConectar_Click"/>
+            <Button x:Name="BtnConectar"
+                    Content="Conectarse"
+                    Style="{StaticResource ConnectBtn}"
+                    Margin="0,8,0,8" 
+                    HorizontalAlignment="Center" 
+                    Click="BtnConectar_Click"/>
         </Border>
 
     </Grid>

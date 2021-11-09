@@ -12,8 +12,7 @@
                 <ResourceDictionary Source="./Themes/ButtonReg.xaml"/>
                 <ResourceDictionary Source="./Themes/Botones.xaml"/>
                 <ResourceDictionary Source="./Themes/textBox.xaml"/>
-                <ResourceDictionary Source="./Themes/ejemplo.xaml"/>
-
+                <ResourceDictionary Source="./Themes/UserCard.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

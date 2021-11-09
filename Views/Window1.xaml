@@ -71,8 +71,11 @@
         </Grid>
 
         <Border Grid.Row="2" Background="#252525">
-            <Button Style="{StaticResource RegisterButton}"
-                    Click="Registrarse" Margin="0,8,0,8" HorizontalAlignment="Center"/>
+            <Button Style="{StaticResource ConnectBtn}"
+                    Content="Registrarse"
+                    Click="Registrarse" 
+                    Margin="0,8,0,8" 
+                    HorizontalAlignment="Center"/>
         </Border>
 
     </Grid>

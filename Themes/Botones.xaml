@@ -27,27 +27,11 @@
                             Background="#2DA67F" 
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                        <Label Content="Conectarse" Foreground="AliceBlue"></Label>
+                        <Label Content="{TemplateBinding Content}" Foreground="AliceBlue"></Label>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style TargetType="Button" x:Key="RegisterButton">
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Margin" Value="8"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="8"
-                            Background="#2DA67F" 
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                        <Label Content="Registrarse" Foreground="AliceBlue"></Label>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 </ResourceDictionary>

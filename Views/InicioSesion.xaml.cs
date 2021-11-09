@@ -52,7 +52,6 @@ namespace Maka2.Views
 
         private void BtnConectar_Click(object sender, RoutedEventArgs e)
         {
-            bool resultado;
             using (BD bd = new BD())
             {
                 if ( bd.Login(UserName.Text,PassWord.Text) )
