@@ -41,7 +41,7 @@
                             BorderThickness="0" 
                             Foreground="GreenYellow"
                             FontWeight="Bold"
-                            Click="ButtonClose_Click"/>
+                            Click="ButtonClose_Click" IsCancel="True"/>
 
                 </StackPanel>
             </Grid>
@@ -73,7 +73,7 @@
                     Style="{StaticResource ConnectBtn}"
                     Margin="0,8,0,8" 
                     HorizontalAlignment="Center" 
-                    Click="BtnConectar_Click"/>
+                    Click="BtnConectar_Click" IsDefault="True"/>
         </Border>
 
     </Grid>

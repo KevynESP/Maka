@@ -18,5 +18,6 @@ namespace Maka2
 
     {
         public static string UsuarioLogeado = "";
+        public static bool NewUser = false;
     }
 }

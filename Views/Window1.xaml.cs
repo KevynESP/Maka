@@ -56,7 +56,7 @@ namespace Maka2.Views
                 else
                     using (BD bd = new BD())
                     {
-                        if (bd.Registrar(UserName.Text, PassWord.Text))
+                        if (bd.Registrar(UserName.Text, Name.Text , PassWord.Text))
                         {
                             MainWindow mainWindow = new MainWindow();
                             mainWindow.Show();
@@ -64,18 +64,14 @@ namespace Maka2.Views
                         }
                         else
                         {
-                            MessageBox.Show("error agregarndo usuario");
+                            MessageBox.Show("error agregando usuario");
                         }
                     }
-
-
-
             }
             else
             {
                 MessageBox.Show("Las contraseñas no coinciden");
             }
-            
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)

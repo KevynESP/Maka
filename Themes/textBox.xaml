@@ -16,7 +16,7 @@
                                      Background="Transparent"
                                      VerticalContentAlignment="Center"
                                      FontSize="10"
-                                     Foreground="#2E2F2F"
+                                     Foreground="{TemplateBinding Foreground}"
                                      CaretBrush="GreenYellow"
                                      x:Name="text_box"
                                      Text="{Binding Path=Text,

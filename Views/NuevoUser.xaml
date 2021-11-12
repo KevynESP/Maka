@@ -35,7 +35,7 @@
                             BorderThickness="0" 
                             Foreground="GreenYellow"
                             FontWeight="Bold"
-                            Click="ButtonClose_Click"/>
+                            Click="ButtonClose_Click" IsCancel="True"/>
 
                 </StackPanel>
             </Grid>
@@ -57,10 +57,10 @@
         </Grid>
 
         <Border Grid.Row="2" Background="#252525">
-            <Button Style="{StaticResource ConnectBtn}"
+            <Button x:Name="AñadirButton" Style="{StaticResource ConnectBtn}"
                     Content="Añadir"
                     Margin="0,3,0,3" 
-                    HorizontalAlignment="Center"/>
+                    HorizontalAlignment="Center" Click="Button_Click" IsDefault="True"/>
         </Border>
 
     </Grid>

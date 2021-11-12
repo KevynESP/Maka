@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Maka2.Clase_conexion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Maka2.Views
         public NuevoUser()
         {
             InitializeComponent();
+
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
@@ -37,5 +39,13 @@ namespace Maka2.Views
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (BD bd = new BD())
+            {
+                bd.NContacto(UserName.Text.ToString());
+                this.Close();
+            }
+        }
     }
 }

@@ -1,10 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
+﻿
+using MySql.Data.MySqlClient;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Maka2.Model
 {
@@ -16,22 +13,18 @@ namespace Maka2.Model
         public MainViewModel()
         {
             Contactos = new ObservableCollection<Contacto>();
-
             Usuarios = new ObservableCollection<Usuario>();
 
             GetContactos();
             GetName();
         }
-
-        
-
-        private void GetContactos()
+        public void GetContactos()
         {
             string connStr = "server=23.91.70.27;user=maka_maka;database=maka_maka;password=Maka2021*;";
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
 
-            string sql = "SELECT usuario_contacto FROM Contactos where Usuario = " + App.UsuarioLogeado + ";";
+            string sql = "SELECT usuario_contacto FROM Contactos where Usuario = '" + App.UsuarioLogeado + "';";
             using (MySqlCommand cmd = new MySqlCommand(sql, conn))
             {
                 using (MySqlDataReader rdr = cmd.ExecuteReader())
@@ -42,8 +35,8 @@ namespace Maka2.Model
                         {
                             Contactos.Add(new Contacto
                             {
-                                UserName = rdr.GetString(0),
-                                LastMessage = "hola",
+                                UserName = rdr[0].ToString(),
+                                LastMessage = "nuevo usuario",
                             });
                         }
                     }
@@ -53,13 +46,13 @@ namespace Maka2.Model
             conn.Close();
         }
 
-        private void GetName()
+        public void GetName()
         {
             string connStr = "server=23.91.70.27;user=maka_maka;database=maka_maka;password=Maka2021*;";
             MySqlConnection conn = new MySqlConnection(connStr);
             conn.Open();
 
-            string sql = "SELECT Nombre FROM Usuarios_Registrados where Usuario = " + App.UsuarioLogeado + ";";
+            string sql = "SELECT Nombre FROM Usuarios_Registrados where Usuario = '" + App.UsuarioLogeado + "'";
             using (MySqlCommand cmd = new MySqlCommand(sql, conn))
             {
                 using (MySqlDataReader rdr = cmd.ExecuteReader())
@@ -78,7 +71,6 @@ namespace Maka2.Model
             }
             conn.Close();
         }
-
 
     }
 }

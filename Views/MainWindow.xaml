@@ -141,6 +141,8 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBox Grid.Column="0" 
+                Margin="10,0,0,0"
+                Foreground="GreenYellow"
                 x:Name="TMensaje" 
                 Uid="Write down"
                 IsEnabled="True"
