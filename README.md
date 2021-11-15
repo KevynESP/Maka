@@ -3,7 +3,7 @@
 
 ---
 
-#####Primera subida
+####Primera subida
 
 En la primera subida de este proyecto, tenía una idea muy distinta de como acabo siendo.
 Ya que al principio subí un proyecto con que usaba sockets y ips para chatear y tenía varios errores.
