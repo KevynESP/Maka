@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="./Themes/Botones.xaml"/>
                 <ResourceDictionary Source="./Themes/textBox.xaml"/>
                 <ResourceDictionary Source="./Themes/UserCard.xaml"/>
+                <ResourceDictionary Source="./Themes/Scrollbar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
         </ResourceDictionary>
