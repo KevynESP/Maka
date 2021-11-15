@@ -156,7 +156,8 @@
                 IsEnabled="True"
                 Background="#353340"
                 Style="{StaticResource ModernTextBoxUI}"
-                MaxLength="255" KeyDown="TMensaje_KeyDown"
+                KeyDown="TMensaje_KeyDown"
+                MaxLength="250"
                 />
 
                 <Button Visibility="Hidden" IsEnabled="False" Grid.Column="1" Margin="-8,0,0,0" x:Name="EnviarBtn" Height="40" Width="50" BorderThickness="0" Style="{StaticResource EnviarBtn}" Click="EnviarBtn_Click"/>

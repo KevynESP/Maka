@@ -19,6 +19,7 @@
                                      Foreground="{TemplateBinding Foreground}"
                                      CaretBrush="GreenYellow"
                                      x:Name="text_box"
+                                     MaxLength="{TemplateBinding MaxLength}"
                                      Text="{Binding Path=Text,
                                                 RelativeSource={RelativeSource TemplatedParent}, 
                                                 Mode=TwoWay,
