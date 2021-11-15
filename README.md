@@ -17,3 +17,7 @@ Seguía usando las ip pero ya empezaba a tener forma, ya que añadí dictionary 
 Aquí cambie por completo el código ya que hago una conexión a una base de datos con host, por lo que ya no trabaja con ip sino con esa conexión.
 El problema que tenía era que las ip públicas pueden ser iguales para distintas máquinas, por lo que con esta conexión mediante Login no hay problemas de este tipo.
 Añadí ventanas de funcionalidad, como la de registro y añadir usuarios, con sus respectivos estilos y funciones.
+
+---
+
+Kevin Ferreira Sacco *Maka*
