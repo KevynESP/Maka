@@ -68,7 +68,7 @@ namespace Maka2.Model
 
         public void GetName()
         {
-            string sql = "SELECT Nombre FROM Usuarios_Registrados where Usuario = '" + App.UsuarioLogeado + "'";
+            string sql = "SELECT Nombre FROM Usuarios_Registrados where strcmp(Usuario,'" + App.UsuarioLogeado + "')=0";
             using (MySqlCommand cmd = new MySqlCommand(sql, App.connxxt2))
             {
                 using (MySqlDataReader rdr = cmd.ExecuteReader())

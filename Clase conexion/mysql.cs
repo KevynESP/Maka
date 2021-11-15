@@ -22,7 +22,7 @@ namespace Maka2.Clase_conexion
             if (usuario != "" && password != "")
             {
 
-                string sql = "SELECT * FROM Usuarios_Registrados where usuario like binary '" + usuario.Trim() + "' and password = '" + password.Trim() + "'";
+                string sql = "SELECT * FROM Usuarios_Registrados where strcmp(usuario,'" + usuario.Trim() + "')=0 and strcmp(password,'" + password.Trim() + "')=0";
                 using (MySqlCommand cmd = new MySqlCommand(sql, App.connxx))
                 {
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
@@ -43,7 +43,7 @@ namespace Maka2.Clase_conexion
 
             using (MySqlCommand cmd = App.connxx.CreateCommand())
             {
-                cmd.CommandText = "SELECT usuario FROM Usuarios_Registrados where usuario like binary '"+ usuario.Trim()+"'";
+                cmd.CommandText = "SELECT usuario FROM Usuarios_Registrados where strcmp(usuario,'"+ usuario.Trim()+"')=0";
                 using (MySqlDataReader rdr = cmd.ExecuteReader())
                 {
                     if (!rdr.HasRows)
@@ -77,7 +77,7 @@ namespace Maka2.Clase_conexion
             {
                 using (MySqlCommand cmd = App.connxx.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT usuario FROM Usuarios_Registrados where usuario like binary '" + usuario.Trim() + "'";
+                    cmd.CommandText = "SELECT usuario FROM Usuarios_Registrados where strcmp(usuario,'" + usuario.Trim() + "')=0";
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
                     {
                         if (rdr.HasRows)
@@ -94,7 +94,7 @@ namespace Maka2.Clase_conexion
                 {
                     using (MySqlCommand cmd = App.connxx.CreateCommand())
                     {
-                        cmd.CommandText = "SELECT usuario_contacto FROM Contactos where usuario = '" + App.UsuarioLogeado.Trim() + "' and usuario_contacto = '" + usuario.Trim() + "'";
+                        cmd.CommandText = "SELECT usuario_contacto FROM Contactos where strcmp(usuario,'" + App.UsuarioLogeado.Trim() + "')=0 and strcmp(usuario_contacto,'" + usuario.Trim() + "')=0";
                         using (MySqlDataReader rdr = cmd.ExecuteReader())
                         {
                             if (!rdr.HasRows)
@@ -135,8 +135,8 @@ namespace Maka2.Clase_conexion
         public DataTable Cargar_Chats(string chat_actual)
         {
             DataTable dt = new DataTable();
-               string cond1 = "(usuario_origen like binary '" + App.UsuarioLogeado.Trim() + "' and usuario_destino like binary '" + chat_actual.Trim() + "')";
-                string cond2 = "(usuario_origen like binary '" + chat_actual.Trim() + "' and usuario_destino like binary '" + App.UsuarioLogeado.Trim() + "')";
+               string cond1 = "(strcmp(usuario_origen,'" + App.UsuarioLogeado.Trim() + "')=0 and strcmp(usuario_destino,'" + chat_actual.Trim() + "')=0)";
+                string cond2 = "(strcmp(usuario_origen,'" + chat_actual.Trim() + "')=0 and strcmp(usuario_destino,'" + App.UsuarioLogeado.Trim() + "')=0)";
 
             using (MySqlCommand cmd = App.connxxt4.CreateCommand())
             {
@@ -157,7 +157,7 @@ namespace Maka2.Clase_conexion
         {
             DataTable dt = new DataTable();
 
-            string cond2 = "(usuario_origen like binary '" + chat_actual.Trim() + "' and usuario_destino like binary '" + App.UsuarioLogeado.Trim() + "')";
+            string cond2 = "(strcmp(usuario_origen,'" + chat_actual.Trim() + "')=0 and strcmp(usuario_destino,'" + App.UsuarioLogeado.Trim() + "')=0)";
             string cond3 = "fecha > '" + Ultimo.ToString("yyyy-MM-dd HH:mm:ss") + "'";
             using (MySqlCommand cmd2 = App.connxxt1.CreateCommand())
             {
