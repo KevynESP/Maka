@@ -4,10 +4,20 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>PlaneMaka.ico</ApplicationIcon>
+    <Authors>Kevin Ferreira</Authors>
+    <Company>Maka S.L.</Company>
+    <Description>Aplicación de chat online</Description>
+    <PackageIcon>PlaneMaka.ico</PackageIcon>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release\net5.0-windows\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Release\net5.0-windows\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +27,10 @@
     <EmbeddedResource Remove="Models\**" />
     <None Remove="Core\**" />
     <None Remove="Models\**" />
+    <None Include="..\..\..\Pictures\ImagenesProyecto\PlaneMaka.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <Page Remove="Core\**" />
     <Page Remove="Models\**" />
   </ItemGroup>
