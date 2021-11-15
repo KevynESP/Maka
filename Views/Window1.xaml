@@ -67,10 +67,10 @@
             <Label x:Name="RPSW" VerticalAlignment="Center" Grid.Row="3" Content="Repeat password:" Foreground="GreenYellow" FontWeight="SemiBold" Padding="0,8,0,8"/>
             <Label BorderThickness="0" Background="Transparent" x:Name="BtnInicio" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Content="Volver a inicio de sesión." Foreground="GreenYellow" Grid.ColumnSpan="2" HorizontalAlignment="Center"  PreviewMouseDown="BtnInicio_PreviewMouseDown" />
             
-            <TextBox x:Name="UserName"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5" Uid="Username" Style="{StaticResource ModernTextBoxUI}"/>
-            <TextBox x:Name="Name"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5" Uid="Name" Style="{StaticResource ModernTextBoxUI}"/>
-            <TextBox x:Name="PassWord"  VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="0,3,0,3" Uid="password" Style="{StaticResource ModernTextBoxUI}"/>
-            <TextBox x:Name="RPassWord"  VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Margin="0,5,0,0" Uid="Repeat Password" Style="{StaticResource ModernTextBoxUI}" />
+            <TextBox MaxLength="15" x:Name="UserName"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5" Uid="Username" Style="{StaticResource ModernTextBoxUI}"/>
+            <TextBox MaxLength="15" x:Name="Name"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5" Uid="Name" Style="{StaticResource ModernTextBoxUI}"/>
+            <TextBox MaxLength="15" x:Name="PassWord"  VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Margin="0,3,0,3" Uid="password" Style="{StaticResource ModernTextBoxUI}"/>
+            <TextBox MaxLength="15" x:Name="RPassWord"  VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Margin="0,5,0,0" Uid="Repeat Password" Style="{StaticResource ModernTextBoxUI}" />
 
         </Grid>
 

@@ -62,8 +62,8 @@
             <Label VerticalAlignment="Center" Grid.Row="1" Content="Password:" Foreground="GreenYellow" FontWeight="SemiBold" Padding="0,8,0,8"/>
             <Label BorderThickness="0" Background="Transparent" x:Name="BtnRegistrarse" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Content="Desea registrarse?" Foreground="GreenYellow" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,10,0,-20" PreviewMouseDown="BtnRegistrarse_PreviewMouseDown" />
 
-            <TextBox x:Name="UserName"  VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5" Uid="Username" Style="{StaticResource ModernTextBoxUI}"/>
-            <TextBox x:Name="PassWord"  VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,3,0,3" Uid="password" Style="{StaticResource ModernTextBoxUI}"/>
+            <TextBox x:Name="UserName" MaxLength="15" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5" Uid="Username" Style="{StaticResource ModernTextBoxUI}"/>
+            <TextBox x:Name="PassWord" MaxLength="15" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="0,3,0,3" Uid="password" Style="{StaticResource ModernTextBoxUI}"/>
 
         </Grid>
 

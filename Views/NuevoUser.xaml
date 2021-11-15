@@ -52,7 +52,7 @@
             </Grid.RowDefinitions>
             <Label VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0" Content="Username:" Foreground="GreenYellow" FontWeight="SemiBold"/>
 
-            <TextBox x:Name="UserName" Margin="-10,0,5,0" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Uid="Username" Style="{StaticResource ModernTextBoxUI}"/>
+            <TextBox MaxLength="15" x:Name="UserName" Margin="-10,0,5,0" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"  Uid="Username" Style="{StaticResource ModernTextBoxUI}"/>
        
         </Grid>
 
