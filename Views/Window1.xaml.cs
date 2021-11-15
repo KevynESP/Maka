@@ -73,7 +73,6 @@ namespace Maka2.Views
                                 }
                             }
                     }
-                    
                 }
                 
             }
@@ -85,6 +84,11 @@ namespace Maka2.Views
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
+            App.connxx.Close();
+            App.connxxt2.Close();
+            App.connxxt1.Close();
+            App.connxxt3.Close();
+            App.connxxt4.Close();
             Application.Current.Shutdown();
         }
 

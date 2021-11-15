@@ -205,7 +205,6 @@ namespace Maka2
                         ultimo_enviado = DateTime.Now;
                     }
                     AnadirTexto(TMensaje.Text, DateTime.Now, 8, TextAlignment.Right);
-                    // AnadirTexto("", DateTime.Now, 8, TextAlignment.Right);
                 }
                 TMensaje.Text = "";
             }
@@ -219,19 +218,6 @@ namespace Maka2
             datos.GetContactos();
             this.DataContext =  datos;
         }
-        public BitmapImage ToImage(byte[] array)
-        {
-            using (var ms = new System.IO.MemoryStream(array))
-            {
-                var image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad; // here
-                image.StreamSource = ms;
-                image.EndInit();
-                return image;
-            }
-        }
-
         private void Cargar_Chat(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
 
@@ -268,23 +254,18 @@ namespace Maka2
                     {
                         AnadirTexto(Chats.Rows[i][2].ToString().Trim(), ((DateTime)Chats.Rows[i][3]), 8, TextAlignment.Right);
 
-                       // AnadirTexto("", ((DateTime)Chats.Rows[i][3]), 8, TextAlignment.Right);
                     }
                     else
                     {
                         AnadirTexto(Chats.Rows[i][2].ToString().Trim(), ((DateTime)Chats.Rows[i][3]), 8, TextAlignment.Left);
-                        //AnadirTexto("", ((DateTime)Chats.Rows[i][3]), 8, TextAlignment.Left);
+
                     }
                 }
-                //lMensajes.Document.Blocks.Add(mcFlowDoc);
             }
             lMensajes.ScrollToEnd();
             LblUser.Content = selectedUser.UserName;
-            //ultimo=ultima fila del dt en la columna fecha
             t1.Start();
             xsw = true;
-            
-
         }
 
         private void TMensaje_KeyDown(object sender, KeyEventArgs e)

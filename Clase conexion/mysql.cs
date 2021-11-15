@@ -61,7 +61,7 @@ namespace Maka2.Clase_conexion
                 cmd2.CommandText = "insert into Usuarios_Registrados (usuario, nombre, password) values ('" + usuario.Trim() + "', '" + name.Trim()+ "', '" + password.Trim() + "')";
                 int rowCount = cmd2.ExecuteNonQuery();
 
-                if (rowCount == 1) //or you can use > 0
+                if (rowCount == 1)
                 {
                     resultado = true;
                 }
@@ -147,11 +147,8 @@ namespace Maka2.Clase_conexion
             }
             using (MySqlCommand cmd = App.connxxt4.CreateCommand())
             {
-
                 cmd.CommandText = "update Mensajes set descargado =1 where " + cond1 + " or " + cond2;
                 cmd.ExecuteNonQuery();
-
-
             }
             return dt;
         }
@@ -184,21 +181,7 @@ namespace Maka2.Clase_conexion
                 cmd.CommandText = "insert into Mensajes  (Usuario_Origen, Usuario_Destino, Mensaje,fecha) values ('" + cond1 + "','" + chat_actual + "','" + mensaje.Trim() + "', '"+ DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')";
                 cmd.ExecuteNonQuery();
             }
-
-            
         }
-        /*
-        public void ListaUltimo(string userName)
-        {
-
-            using (MySqlCommand cmd = App.connxx.CreateCommand())
-            {
-                string cond2 = "usuario_destino like binary '" + App.UsuarioLogeado.Trim() + "')";
-                cmd.CommandText = "select usuario_origen, sum(CASE WHEN Descargado=0 1 ELSE 0 END) as sindescargar,mensaje from Mensajes where "+ cond2+") group by usuario_origen order by fecha";
-                cmd.ExecuteNonQuery();
-            }
-        }
-        */
         public void Dispose()
         {
         }
