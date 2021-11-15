@@ -20,4 +20,4 @@ Añadí ventanas de funcionalidad, como la de registro y añadir usuarios, con s
 
 ---
 
-Kevin Ferreira Sacco *Maka*
+*Kevin Ferreira Sacco Maka*
