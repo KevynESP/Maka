@@ -1,0 +1,1 @@
+## Para ejecutar el programa se debe entrar en net5.0-windows\net5.0-windows y ejecutar el exe Maka.
