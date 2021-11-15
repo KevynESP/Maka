@@ -5,15 +5,17 @@
              StartupUri="./Views/InicioSesion.xaml">
     <Application.Resources>
         <ResourceDictionary>
+
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="./Themes/MessageBox.xaml"/>
-                <ResourceDictionary Source="./Themes/ChatItem.xaml"/>
                 <ResourceDictionary Source="./Themes/ContactCard.xaml"/>
-                <ResourceDictionary Source="./Themes/ButtonReg.xaml"/>
+                <ResourceDictionary Source="./Themes/UsuarioNombre.xaml"/>
                 <ResourceDictionary Source="./Themes/Botones.xaml"/>
                 <ResourceDictionary Source="./Themes/textBox.xaml"/>
                 <ResourceDictionary Source="./Themes/UserCard.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            
         </ResourceDictionary>
+        
     </Application.Resources>
+    
 </Application>
